@@ -4,6 +4,7 @@ import { AppRegistry } from 'react-native'
 import dva from './utils/dva'
 import Router, { routerMiddleware, routerReducer } from './router'
 import appModel from './models/app'
+import { name as AppName } from '../app.json';
 
 const app = dva({
   initialState: {},
@@ -17,4 +18,4 @@ const app = dva({
 
 const App = app.start(<Router />)
 
-AppRegistry.registerComponent('DvaStarter', () => App)
+AppRegistry.registerComponent(AppName, () => App)
