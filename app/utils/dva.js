@@ -13,6 +13,8 @@ export default function(options) {
   app.start()
   // eslint-disable-next-line no-underscore-dangle
   const store = app._store
+  // window.g_app._store.dispatch
+  global.g_app = app
 
   app.start = container => () => <Provider store={store}>{container}</Provider>
   app.getStore = () => store
